@@ -6,7 +6,8 @@
                     hx-get="{{ url_for('flask_file_explorer.browse', path=path ~ '/' ~ file) }}" 
                     hx-trigger="click" 
                     hx-swap="outerHTML" 
-                    hx-target="next ul" hx-on::before-request="toggleFolder(this, event)"> 
+                    hx-target="next ul" hx-on::before-request="toggleFolder(this, event)"
+                    data-ffe-dir="{{path ~ '/' ~ file}}"> 
                     <i class="bx bx-folder"></i>
                     {{ file }}
                 </a>
@@ -18,8 +19,10 @@
                     <a href="#" 
                         hx-get="{{ url_for('flask_file_explorer.download', path=path ~ '/' ~ file) }}" 
                         hx-trigger="click" 
-                        hx-swap="outerHTML" 
-                        hx-target=".file-explorer">
+                        hx-swap="innerHTML" 
+                        hx-target="#file-viewer"
+                        data-ffe-file="{{path ~ '/' ~ file}}"
+                        >
                         <i class="bx bx-file"></i>
                         {{ file }}
                     </a>
@@ -33,3 +36,4 @@
         {% endif %}
     {% endfor %}
 </ul>
+

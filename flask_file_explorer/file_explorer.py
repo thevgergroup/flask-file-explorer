@@ -14,8 +14,8 @@ def index():
     '''
     Renders the index.html template with the base directory.
     '''
-    base_directory = current_app.config.get('BASE_DIRECTORY')
-    return render_template('index.html', base_directory=base_directory)
+    base_directory = get_base_directory()
+    return render_template('flask-file-explorer/index.html', base_directory=base_directory)
 
 
 @file_explorer_bp.route('/browse')
@@ -23,7 +23,7 @@ def browse():
     '''
     Renders the index.html template with the files and directories in the given path.
     '''
-    base_directory = current_app.config.get('BASE_DIRECTORY')
+    base_directory = get_base_directory()
     path = request.args.get('path', '')
     path = remove_leading_slash(path)
     
@@ -36,9 +36,9 @@ def browse():
         files = os.listdir(full_path)
         
         if request.args.get('path', '') != '':
-            return render_template('listings.html', base_directory=base_directory, path=path, files=files)
+            return render_template('flask-file-explorer/listings.html', base_directory=base_directory, path=path, files=files)
         
-        return render_template('index.html', base_directory=base_directory, path=path, files=files)
+        return render_template('flask-file-explorer/index.html', base_directory=base_directory, path=path, files=files)
     else:
         return send_file(full_path)
     
@@ -48,8 +48,10 @@ def upload():
     '''
     Handles the file upload request.
     '''
-    base_directory = current_app.config.get('BASE_DIRECTORY')
+    base_directory = get_base_directory()
     path = request.form.get('path', '')
+    path = remove_leading_slash(path)
+    
     file = request.files.get('file')
     if file:
         file.save(os.path.join(base_directory, path, file.filename))
@@ -61,7 +63,7 @@ def download():
     '''
     Handles the file download request.
     '''
-    base_directory = current_app.config.get('BASE_DIRECTORY')
+    base_directory = get_base_directory()
     path = request.args.get('path', '')
     full_path = os.path.join(base_directory, path)
     if os.path.isdir(full_path):
@@ -78,18 +80,25 @@ def remove_leading_slash(path):
         return path[1:]
     return path
 
-def is_in_base_directory(base_directory, path):
+def is_in_base_directory(path):
     '''
     Checks if a path is in the base directory.
     '''
-    base_directory = os.path.abspath(base_directory)
+    base_directory = os.path.abspath(get_base_directory())
     path = os.path.abspath(path)
     return path.startswith(base_directory)
 
-def is_in_subdirectory(base_directory, path):
+def is_in_subdirectory(path):
     '''
     Checks if a path is in a subdirectory of the base directory.
     '''
-    base_directory = os.path.abspath(base_directory)
+    base_directory = os.path.abspath(get_base_directory())
     path = os.path.abspath(path)
     return not path.startswith(base_directory) and base_directory in path
+
+
+def get_base_directory():
+    '''
+    Gets the base directory from the configuration.
+    '''
+    return current_app.config.get('FFE_BASE_DIRECTORY')

@@ -3,6 +3,7 @@ This file contains custom filters for Jinja2 templates.
 '''
 import os
 from flask import current_app
+from .file_explorer import get_base_directory
 base_dir = None
 
 def directory(file, path):
@@ -26,7 +27,7 @@ def register_filters(app):
     '''
     with app.app_context():
         global base_dir
-        base_dir = current_app.config.get('BASE_DIRECTORY')
+        base_dir = get_base_directory()
         
     app.jinja_env.filters['directory'] = directory
     app.jinja_env.filters['inlineable'] = inlineable
