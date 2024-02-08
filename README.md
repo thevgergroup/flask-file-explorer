@@ -28,23 +28,28 @@ See [Flask-Login with a blueprint](#flask-login-with-a-blueprint) as an example.
 - [X] Collapsing tree structure
 - [X] Remove closed directory tree
 - [X] Secure file browsing and uploads
+- [ ] Custom theming and embedding 
 
 ## A quick and easy web based file explorer
 
 Flask-file-explorer supports navigating through directories, viewing files, downloading / uploading files
 
 * File System Explorer
-![Flask File Explorer](https://raw.githubusercontent.com/thevgergroup/flask-file-explorer/main/docs/images/flask_file_explorer.png)
+
+<img src="https://raw.githubusercontent.com/thevgergroup/flask-file-explorer/main/docs/images/flask_file_explorer.png" width="400px" height="300px" alt="Flask File Explorer">
 
 
 * File Viewer
-![Flask File Viewer](https://raw.githubusercontent.com/thevgergroup/flask-file-explorer/main/docs/images/flask_file_view.png)
+ 
+<img src="https://raw.githubusercontent.com/thevgergroup/flask-file-explorer/main/docs/images/flask_file_view.png" alt="Flask File Viewer" width="400px" height="300px">
 
 ## Installation 
 Standard install
 
 ```sh
-# poetry add flask-file-explorer # Getting there
+poetry add flask-file-explorer
+# or
+pip install flask-file-explorer
 # or 
 poetry add git+https://github.com/thevgergroup/flask-file-explorer
 ```
