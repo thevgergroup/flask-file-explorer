@@ -1,6 +1,7 @@
 /* Add your custom JavaScript code here */
 
 let modal_file_viewer ; 
+let should_prevent_htmx = true;
 
 function removeActiveDirectoryClass() {
     // Select all elements with the class 'active_directory'
@@ -35,8 +36,13 @@ function toggleFolder(element, event) {
         //sublisting.classList.toggle('d-none');
         //ul = document.createElement('ul');
         //parent.appendChild(ul);
-        event.preventDefault();
-        element.dispatchEvent(new Event('htmx:abort'));
+        if (should_prevent_htmx) {
+            event.preventDefault();
+            element.dispatchEvent(new Event('htmx:abort'));
+        } else {
+            sublisting = document.createElement('ul');
+            should_prevent_htmx = true;
+        }
     }
 }
 
@@ -57,3 +63,19 @@ document.body.addEventListener('htmx:afterSwap', function(evt) {
         myModal.show();
     }
 });
+
+
+Dropzone.options.ffeUploadForm = {
+    init: function() {
+        this.on('success', function(file) {
+            console.log("Uploaded file:");
+            console.log(file);
+            full_name = $("#current_active_dir").val()
+            console.log(full_name);
+            should_prevent_htmx = false;
+            
+            $("a.active_directory")[0].click();
+
+        });
+    }
+}

@@ -32,6 +32,9 @@ def browse():
     ic(base_directory)
     ic(full_path)
     ic(path)
+    if not is_in_base_directory(full_path) :
+        return 'Illegal path', 400
+    
     if os.path.isdir(full_path):
         files = os.listdir(full_path)
         
@@ -53,8 +56,13 @@ def upload():
     path = remove_leading_slash(path)
     
     file = request.files.get('file')
+    full_path = os.path.join(base_directory, path, file.filename)
+    
+    if not is_in_base_directory(full_path) :
+        return 'Illegal path', 400
+    
     if file:
-        file.save(os.path.join(base_directory, path, file.filename))
+        file.save(os.path.join(full_path))
     return '', 204
 
 
@@ -66,6 +74,10 @@ def download():
     base_directory = get_base_directory()
     path = request.args.get('path', '')
     full_path = os.path.join(base_directory, path)
+    
+    if not is_in_base_directory(full_path) :
+        return 'Illegal path', 400
+    
     if os.path.isdir(full_path):
         return send_file(full_path, as_attachment=True)
     else:
