@@ -8,7 +8,6 @@ readme = "README.md"
 homepage = "https://github.com/thevgergroup/flask-file-explorer"
 repository = "https://github.com/thevgergroup/flask-file-explorer.git"
 keywords = ["flask", "filesystem", "viewer", "explorer", "htmx"]
-license = "MIT"
 classifiers= [
                 "Framework :: Flask",
                 "Topic :: Desktop Environment :: File Managers",  
