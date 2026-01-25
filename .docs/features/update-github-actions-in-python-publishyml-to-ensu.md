@@ -1,10 +1,13 @@
 ---
-status: in_progress
-work_type: feature
 branch: feature/update-github-actions-in-python-publishyml-to-ensu
-intent: Update GitHub Actions in python-publish.yml to ensure they are using the latest stable versions.
-created: 2026-01-25T16:52:18.965120
+created: 2026-01-25 16:52:18.965120
+intent: Update GitHub Actions in python-publish.yml to ensure they are using the latest
+  stable versions.
+pr_number: 6
+pr_url: https://github.com/thevgergroup/flask-file-explorer/pull/6
 started_by: chat-session-unknown
+status: pr_created
+work_type: feature
 ---
 
 # Update GitHub Actions in python-publish.yml to ensure they are using the latest stable versions.
