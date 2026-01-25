@@ -1,10 +1,13 @@
 ---
-status: in_progress
-work_type: feature
 branch: feature/update-github-actions-in-workflow-to-resolve-build
-intent: Update GitHub Actions in workflow to resolve build issues and use latest action versions
-created: 2026-01-25T17:09:34.511473
+created: 2026-01-25 17:09:34.511473
+intent: Update GitHub Actions in workflow to resolve build issues and use latest action
+  versions
+pr_number: 7
+pr_url: https://github.com/thevgergroup/flask-file-explorer/pull/7
 started_by: chat-session-unknown
+status: pr_created
+work_type: feature
 ---
 
 # Update GitHub Actions in workflow to resolve build issues and use latest action versions
