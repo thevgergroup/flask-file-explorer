@@ -18,6 +18,7 @@ The objective of this plan is to update the GitHub Actions workflows in the `fla
    - Navigate to the `.github/workflows/` directory in the repository.
    - Edit the YAML files to update the actions to their latest versions.
    - Ensure that any deprecations or breaking changes are also addressed during this update.
+   - [x] Completed
 
 4. **Test the Updated Workflows**
    - Commit the changes to a new feature branch in the repository.
