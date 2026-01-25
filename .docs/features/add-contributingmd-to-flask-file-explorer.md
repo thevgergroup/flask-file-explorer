@@ -1,10 +1,12 @@
 ---
-status: in_progress
-work_type: feature
 branch: feature/add-contributingmd-to-flask-file-explorer
+created: 2026-01-25 14:50:49.232775
 intent: Add CONTRIBUTING.md to flask-file-explorer
-created: 2026-01-25T14:50:49.232775
+pr_number: 5
+pr_url: https://github.com/thevgergroup/flask-file-explorer/pull/5
 started_by: chat-session-unknown
+status: pr_created
+work_type: feature
 ---
 
 # Add CONTRIBUTING.md to flask-file-explorer
