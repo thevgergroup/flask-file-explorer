@@ -1,10 +1,13 @@
 ---
-status: in_progress
-work_type: feature
 branch: feature/identify-and-resolve-current-ci-issues-to-ensure-a
-intent: Identify and resolve current CI issues to ensure a green build on the 'main' branch before any modifications.
-created: 2026-01-29T04:54:10.449525
+created: 2026-01-29 04:54:10.449525
+intent: Identify and resolve current CI issues to ensure a green build on the 'main'
+  branch before any modifications.
+pr_number: 12
+pr_url: https://github.com/thevgergroup/flask-file-explorer/pull/12
 started_by: chat-session-unknown
+status: pr_created
+work_type: feature
 ---
 
 # Identify and resolve current CI issues to ensure a green build on the 'main' branch before any modifications.
