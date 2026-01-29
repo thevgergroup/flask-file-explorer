@@ -1,10 +1,12 @@
 ---
-status: in_progress
-work_type: feature
 branch: feature/fix-ci-and-build-failures-for-pr-10
-intent: Fix CI and Build Failures for PR #10
-created: 2026-01-29T04:27:26.429289
+created: 2026-01-29 04:27:26.429289
+intent: Fix CI and Build Failures for PR
+pr_number: 11
+pr_url: https://github.com/thevgergroup/flask-file-explorer/pull/11
 started_by: chat-session-unknown
+status: pr_created
+work_type: feature
 ---
 
 # Fix CI and Build Failures for PR #10
