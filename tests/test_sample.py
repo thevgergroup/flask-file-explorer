@@ -1,4 +1,2 @@
-import pytest
-
-def test_placeholder():
+def test_example():
     assert True
