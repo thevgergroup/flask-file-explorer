@@ -1,10 +1,13 @@
 ---
-status: in_progress
-work_type: hotfix
 branch: hotfix/investigate-and-resolve-current-ci-issues-causing-
-intent: Investigate and resolve current CI issues causing the failure on the main branch
-created: 2026-01-29T04:18:28.332216
+created: 2026-01-29 04:18:28.332216
+intent: Investigate and resolve current CI issues causing the failure on the main
+  branch
+pr_number: 10
+pr_url: https://github.com/thevgergroup/flask-file-explorer/pull/10
 started_by: chat-session-unknown
+status: pr_created
+work_type: hotfix
 ---
 
 # Investigate and resolve current CI issues causing the failure on the main branch
