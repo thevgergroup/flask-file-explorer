@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.2, pluggy-1.6.0
+rootdir: /data/repos/thevgergroup/flask-file-explorer
+configfile: pyproject.toml
+plugins: langsmith-0.6.6, anyio-4.12.1
+collected 3 items
+
+flask_file_explorer/test_dummy.py .                                      [ 33%]
+tests/test_basic.py .                                                    [ 66%]
+tests/test_sample.py .                                                   [100%]
+
+============================== 3 passed in 0.02s ===============================
