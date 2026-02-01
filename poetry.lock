@@ -67,6 +67,12 @@ optional = false
 python-versions = ">=3.8"
 =======
 python-versions = ">=3.5"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7564266 (Remove conflicting PLAN.md during rebase)
+=======
+>>>>>>> feature/update-github-actions-in-python-publishyml-to-ensu
 >>>>>>> 7564266 (Remove conflicting PLAN.md during rebase)
 groups = ["main"]
 files = [
